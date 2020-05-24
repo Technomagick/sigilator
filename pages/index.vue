@@ -46,6 +46,9 @@
                     v-switch(label="Remover consoantes" v-model="settings.removeConsonants" hide-details dense)
                 v-row(dense)
                   v-col(cols="12")
+                    v-switch(label="Remover acentuação" v-model="settings.removeAccents" hide-details dense)
+                v-row(dense)
+                  v-col(cols="12")
                     v-switch(label="Remover letras repetidas" v-model="settings.removeRepeated" hide-details dense)
                 v-row(dense)
                   v-col(cols="12")
@@ -108,6 +111,7 @@ export default {
       removeConsonants: false,
       removeRepeated: false,
       removeSpaces: false,
+      removeAccents: false,
     },
     transliterationHandlers: {
       cyrillicRu(input) {
@@ -131,11 +135,12 @@ export default {
     },
     transformations() {
       const transformations = [
-        'randomizeLetters',
         'removeVowels',
         'removeConsonants',
+        'removeAccents',
         'removeRepeated',
         'removeSpaces',
+        'randomizeLetters',
         'transliterate',
       ]
       return transformations
