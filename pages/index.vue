@@ -72,7 +72,7 @@
                 v-divider.hidden-md-and-up
                 v-card-title {{ result.length > 1 ? 'Resultados' : 'Resultado' }}
                 v-card-text
-                  pre(align="left") {{ result }}
+                  //- pre(align="left") {{ result }}
                   ul
                     transition-group
                       template(v-for="(line, i) in result")
